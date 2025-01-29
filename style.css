@@ -1,3 +1,12 @@
+*{
+  /* para excluir a margem padrão do navegador e padding */
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
 body{
   /*
   background-image: url(./assets/bg-mobile.jpg);
@@ -19,17 +28,19 @@ body *{
 
 #container{
   width: 360px;
-   /*height: 712px;no css não é necessario colocar a altura, pois normalmente segue o conteudo da pagina*/
-  border: 1px, solid red;
+   /*height: 712px;      #no css não é necessario colocar a altura, pois normalmente segue o conteudo da pagina*/
+  /* border: 1px, solid red;    #Foi somente para visualizar a dimessão para incluir o avatar e o arroba. */
 
   /*margin-right: auto;
   margin-left: auto;
   **Esses dois margin pode ser substituir por esse abaixo que tem a mesma função de centralizar o item com a mesma largura em ambas laterais*/
   margin: auto;
+  margin: 56px auto 0px;
 }
 
 #profile{
   text-align: center;
+  padding: 24px;
 }
 
 #profile img {
@@ -37,9 +48,39 @@ body *{
 
 }
 
-#proile p {
+#profile p {
     font-weight: 500;
     /* font-size: 16px;  É um valor padrão de 16px  em todo navegador, então não é necessario incluir  */
     line-height: 24px;
+    margin-top: 8px;
+}
+
+/* links */
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* espaçamento entre os elementos */
+}
+
+ul li a{
+  display: flex;
+  align-items:center ; /*centralizar o texto dentro do container */
+  justify-content: center; /* deixa o texto no meio da pagina, essa mesma função pode ser realizada com o text-align:center*/
+  padding: 16px 24px;
+
+  background: rgba(255,255, 255, 0.1);
+  border: 1px solid rgba(255,255, 255, 0.5);
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(4px); /* filtro para embaçar */
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+/* pseudo-selector */
+ul li a:hover{
+  background: rgba(255,255, 255, 0.05);
+  border: 1px solid white;
 
 }
