@@ -48,7 +48,8 @@ body *{
 
 
 #container{
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
    /*height: 712px;      #no css não é necessario colocar a altura, pois normalmente segue o conteudo da pagina*/
   /* border: 1px, solid red;    #Foi somente para visualizar a dimessão para incluir o avatar e o arroba. */
 
