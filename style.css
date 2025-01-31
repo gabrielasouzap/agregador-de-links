@@ -9,7 +9,7 @@
 /* a raiz do projeto */
 /* o modo padrão é escuro */
 :root{
-  --text-color: white;  /* --infomando que tudo que for usado essa variavel vai ter essa cor, para utilizar basta inserir dessa forma no lugar da cor: var(--text-color) */
+  --text-color: white;  /* --infomando que tudo que for usado essa variavel vai ter essa cor, para utilizar basta inserir dessa forma no lugar da cor: var(--text-color) (variaveis) */
   --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255,255, 255, 0.5);
   --surface-color: rgba(255,255, 255, 0.05);
@@ -17,7 +17,7 @@
   --higlight-color: rgba(255,255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
 }
-/* para deixar no modo claro */
+/* para deixar no modo claro (variaveis)*/
 .light{
   --text-color: black;
   --bg-url: url(./assets/bg-mobile-light.jpg);
@@ -97,13 +97,17 @@ body *{
   left: 0;
   z-index: 1 ;
   transform: translateY(-50%);
+  animation: slide-back 0.2s;
 
 }
 .light #switch button{
-  right: 0;
-  left: initial;
+   animation: slide-in 0.2s forwards; /*forwards mantem as propriendades do animation */
 
 }
+#switch button:hover{
+  outline: 8px solid var(--higlight-color);
+}
+
 
 #switch span{
   display: block;
@@ -187,3 +191,24 @@ footer{
   }
 
 }
+
+/* animation */
+@keyframes slide-in{
+  /* animção do botão para o modo claro */
+  from{
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+
+@keyframes slide-back{
+   /* animção do botão para o modo escuro */
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
+  }
+ }
